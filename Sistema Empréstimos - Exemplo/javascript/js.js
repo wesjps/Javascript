@@ -4,23 +4,33 @@ let numMeses;
 const listaClientes = [];
 
 function cadastrarCliente(nomeCliente,sobrenomeCliente,idadeCliente){
-	nomeCliente = prompt("Digite seu nome: ");
-    sobrenomeCliente = prompt("Digite seu sobrenome: ");
-    idadeCliente= parseInt(prompt("Digite sua idade: "));
-	taxaDeJuros = definirTaxa(idadeCliente);
-    const novoCliente = [];
-    novoCliente [0] = nomeCliente;
-    novoCliente [1] = sobrenomeCliente;
-    novoCliente [2] = idadeCliente;
-    novoCliente [3] = taxaDeJuros;
-    listaClientes.push(novoCliente);
-}
+	cliente = {
+        nomeCliente : prompt("Digite seu nome: "),
+        sobrenomeCliente : prompt("Digite seu sobrenome: "),
+        idadeCliente : parseInt(prompt("Digite sua idade: ")),
+    	taxaDeJuros : definirTaxa(idadeCliente),
+
+        adicionarCliente : function(){
+            confirmacao = prompt("Confirma adição do cliente?");
+            if(confirmacao === "sim"){
+            listaClientes.push(cliente);
+            }else{
+                console.log("Cliente não cadastrado. Tchau!!");
+            }
+        }
+
+        }
+    }
+
+        
+        
+
+
 
 function excluirCliente(indiceCliente){
-    /* pegar o índice do cliente que deseja excluir
-    indiceCliente = ?? */
-
+    indiceCliente = prompt("Digite o número do cliente a ser excluído: ");
     listaClientes.splice(indiceCliente,1);
+    console.log("Cliente excluido com sucesso");
 }
 
 function simulacaoEmprestimo(valorEmprestimoCliente,numMesesCliente){
@@ -48,29 +58,25 @@ function definirTaxa(idadeCliente){
 }
 
 
-function editarCliente(indiceCliente,nomeCliente,sobrenomeCliente,idadeCliente){
+function editarCliente(indiceCliente){
 
-    /* pegar o índice do cliente que deseja editar
-    indiceCliente = ?? */
-
-    confirmar = prompt("Editar Nome? ");
-    if(confirmar == sim){
-            nomeCliente = prompt("Digite o nome do cliente");
-            /* listaClientes [indiceCliente[0]]  = nomeCliente*/    
+    indiceCliente = parseInt(prompt("Digite o número do cliente: "));
+        confirmacao = prompt("Alterar Nome?");
+                if(confirmacao === "sim"){
+                   for (x of listaClientes[indiceCliente]) {cliente.nomeCliente = prompt("Digite o nome: ");}
+                }
+                confirmacao = prompt("Alterar sobrenome?");
+                if(confirmacao === "sim"){
+                    this.cliente.sobrenomeCliente = prompt("Digite o sobrenome: ");
+                }
+                confirmacao = prompt("Alterar idade?");
+                if(confirmacao === "sim"){
+                    this.cliente.idadeCliente = prompt("Digite a idade: ");
+                }
+            
         }
-    confirmar = prompt("Editar Sobrenome? ");
-        if(confirmar == sim){
-            sobrenomeCliente = prompt("Digite o sobrenomenome do cliente");
-            /* listaClientes [indiceCliente[1]] = sobrenomeCliente */    
-        }
-    confirmar = prompt("Editar Idade? ");
-        if(confirmar == sim){
-            idadeCliente = prompt("Digite a idade do cliente");
-            /* listaClientes [indiceCliente[2]] = idadeCliente*/
-            taxaDeJuros = definirTaxa(idadeCliente);
-            /* listaClientes [indiceCliente[3]] = taxaDeJuros*/
-        }
-    }
+    
+    
 
 function listarClientes(){
     
@@ -81,10 +87,14 @@ function listarClientes(){
 let confirmacao = prompt ("Deseja cadastrar?");
 while (confirmacao === "sim"){
     cadastrarCliente();
-    confirmacao = prompt ("Deseja cadastrar?");
+    cliente.adicionarCliente();
+    confirmacao = prompt ("Cadastrar outro cliente?");
 }
 
 let deNovo = prompt ("Exibir clientes?");
 if (deNovo === "sim"){
     listarClientes();
 }
+editarCliente();
+excluirCliente();
+listarClientes();
