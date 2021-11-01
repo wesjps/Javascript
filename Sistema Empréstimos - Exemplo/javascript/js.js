@@ -63,15 +63,15 @@ function editarCliente(indiceCliente){
     indiceCliente = parseInt(prompt("Digite o número do cliente: "));
         confirmacao = prompt("Alterar Nome?");
                 if(confirmacao === "sim"){
-                   for (x of listaClientes[indiceCliente]) {cliente.nomeCliente = prompt("Digite o nome: ");}
+                   listaClientes[indiceCliente].nomeCliente = prompt("Digite o nome: ");
                 }
                 confirmacao = prompt("Alterar sobrenome?");
                 if(confirmacao === "sim"){
-                    this.cliente.sobrenomeCliente = prompt("Digite o sobrenome: ");
+                    listaClientes[indiceCliente].sobrenomeCliente = prompt("Digite o sobrenome: ");
                 }
                 confirmacao = prompt("Alterar idade?");
                 if(confirmacao === "sim"){
-                    this.cliente.idadeCliente = prompt("Digite a idade: ");
+                    listaClientes[indiceCliente].idadeCliente = prompt("Digite a idade: ");
                 }
             
         }
