@@ -3,6 +3,8 @@ let taxaDeJuros;
 let numMeses;
 const listaClientes = [];
 
+const tabelaClientes = document.querySelector("#tabelaClientes");
+
 function cadastrarCliente(nomeCliente,sobrenomeCliente,idadeCliente){
 	cliente = {
         nomeCliente : prompt("Digite seu nome: "),
@@ -82,6 +84,12 @@ function listarClientes(){
     
         console.table(listaClientes);
     
+}
+
+const criaListaCliente = function(){
+    let aux = "";
+    tabelaClientes.forEach((cliente) => { aux += `<li> Nome: ${cliente.nomeCliente}, Sobrenome: ${cliente.sobrenomeCliente}, Idade: ${cliente.idadeCliente}`});
+    tabelaClientes.innerHTML = aux;
 }
 
 let confirmacao = prompt ("Deseja cadastrar?");
