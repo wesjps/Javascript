@@ -9,15 +9,38 @@ let sobrenomeDigitado = document.querySelector("#sobrenomeCliente");
 let idadeDigitada = document.querySelector("#idadeCliente");
 const valorEmprestimo = document.querySelector("#valorEmp");
 const prazoEmp = document.querySelector("#prazoEmp");
-const idCliente = document.querySelector("#idCliente");
+const idCliente = document.querySelector("#idEditarCl");
 const botaoSimular = document.querySelector("#botaoSimular");
+const botaoConfEdit = document.querySelector("#botaoConfEdit");
+const nomeEditarCliente = document.querySelector("#nomeEditarCliente");
+const sobrenomeEditarCliente = document.querySelector("#nomeEditarCliente");
+const idadeEditarCliente = document.querySelector("#sobrenomeEditarCliente");
 
 const tabelaClientes = document.querySelector("#tabelaClientes");
 
+if (botaoLista !== null){
+    botaoLista.addEventListener('click', () => listarClientes());
+}
+if (botaoCadastrar !== null){
+botaoCadastrar.addEventListener('click',() => {
+    cadastrarCliente();
+    // adicionar função limpar campos
+    }); 
+}
+if (botaoSimular !== null){
+botaoSimular.addEventListener('click',() => {
+    simulacaoEmprestimo();
+    // adicionar função limpar campos
+    });
+}
+if (botaoConfEdit !== null){
+botaoConfEdit.addEventListener('click',() =>{
+    editarCliente();
+    // adicionar função limpar campos
+    }); 
+}
 
-botaoLista.addEventListener('click', () => listarClientes());
-botaoCadastrar.addEventListener('click',() =>cadastrarCliente());
-botaoSimular.addEventListener('click',() =>simulacaoEmprestimo());
+
 
 function cadastrarCliente(nomeCliente, sobrenomeCliente, idadeCliente) {
     cliente = {
@@ -66,23 +89,10 @@ function definirTaxa(idadeCliente) {
 
 
 function editarCliente(indiceCliente) {
-    let aux = prompt("Deseja editar os dados de algum cliente?");
-    if (aux === "sim") {
-        indiceCliente = parseInt(prompt("Digite o número do cliente: "));
-        confirmacao = prompt("Alterar Nome?");
-        if (confirmacao === "sim") {
-            listaClientes[indiceCliente].nomeCliente = prompt("Digite o nome: ");
-        }
-        confirmacao = prompt("Alterar sobrenome?");
-        if (confirmacao === "sim") {
-            listaClientes[indiceCliente].sobrenomeCliente = prompt("Digite o sobrenome: ");
-        }
-        confirmacao = prompt("Alterar idade?");
-        if (confirmacao === "sim") {
-            listaClientes[indiceCliente].idadeCliente = prompt("Digite a idade: ");
-        }
-    }
-
+    indiceCliente = idCliente.value;
+    listaClientes[indiceCliente].nomeCliente = nomeEditarCliente.value;
+    listaClientes[indiceCliente].sobrenomeCliente = sobrenomeEditarCliente.value;
+    listaClientes[indiceCliente].idadeCliente = idadeEditarCliente.value;
 }
 
 
@@ -92,7 +102,7 @@ function listarClientes() {
     console.table(listaClientes);
     let aux = "";
     listaClientes.forEach((cliente) => { aux += `${cliente.nomeCliente} ${cliente.sobrenomeCliente}, ${cliente.idadeCliente} anos. Tx de Juros: ${cliente.taxaDeJuros}` });
-    listaClientes.innerHTML = aux;
+    return aux;
 }
 
 

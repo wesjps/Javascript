@@ -19,6 +19,13 @@ img{
     width: 40%;
 }
 
+#idEditarCl{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 10%;
+}
+
 #idCl{
     margin-left: auto;
     margin-right: auto;
