@@ -1,0 +1,183 @@
+
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+#logo{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#prazo{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 40%;
+}
+
+#idCl{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 40%;
+}
+
+table{  
+    text-align: center;
+    background-color: #B5CF15;
+    width: 50%;
+    margin:auto;
+    
+}
+.btn-outline-success{
+    width: 40%;
+    margin: auto;
+}
+
+#gerarLista{
+width: 50%;
+margin:auto;
+}
+
+#simularEmp{
+    width: 40%;
+    margin: auto;
+
+}
+
+
+
+
+
+
+.nomeBanco{
+position: absolute;
+width: 589px;
+height: 105px;
+left: 425px;
+top: 6px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 90px;
+line-height: 105px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #B5CF15;
+}
+
+
+
+
+.formulario{
+position: absolute;
+width: 467px;
+height: 346px;
+left: 486px;
+top: 239px;
+}
+
+
+
+
+/*
+position: absolute;
+width: 78px;
+height: 29px;
+left: 368px;
+top: 695px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+*/
+
+
+/*
+
+position: absolute;
+width: 83px;
+height: 29px;
+left: 368px;
+top: 747px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+*/
+
+
+/*
+position: absolute;
+width: 86px;
+height: 29px;
+left: 368px;
+top: 799px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+*/
+
+
+/*
+
+position: absolute;
+width: 158px;
+height: 29px;
+left: 368px;
+top: 851px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+*/
+
+
+.cruzFundo{
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: -1px;
+top: 0px;
+}
