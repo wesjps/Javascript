@@ -19,16 +19,10 @@
         <div>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" href="./lista.html">LISTA DE CLIENTES</a>
+              <a class="nav-link" href="./lista.html">LISTA DE CLIENTES / CADASTRAR</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./simular.html">SIMULAR EMPRÉSTIMO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastrar.html">CADASTRAR CLIENTE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./editar.html">EDITAR</a>
             </li>
           </ul>
         </div>
@@ -54,15 +48,31 @@
           </div>
           <div class="input-group mb-3" id="idCl">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">ID CLIENTE</span>
+              <span class="input-group-text" id="inputGroup-sizing-default">IDADE DO CLIENTE</span>
             </div>
-            <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" id="idCliente">
+            <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" id="idadeCliente">
           </div>
           <br>
           <div class="container">
             <div class="row">
               <button type="button" class="btn btn-outline-success" id="botaoSimular">SIMULAR</button>
             </div>          
+          </div>
+          <br>
+          <br>
+          <div class="container">
+            <table class="table" id="simTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">VALOR EMPRESTADO</th>
+                  <th scope="col">VALOR PRESTAÇÃO</th>
+                  <th scope="col">TAXA DE JUROS</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
           </div>
 
 <script type="text/javascript" src="../js.js"></script>

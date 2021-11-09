@@ -23,54 +23,68 @@
   <div>
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link" href="./lista.html">LISTA DE CLIENTES</a>
+        <a class="nav-link" href="./lista.html">LISTA DE CLIENTES / CADASTRAR</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./simular.html">SIMULAR EMPRÉSTIMO</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./cadastrar.html">CADASTRAR CLIENTE</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./editar.html">EDITAR</a>
-      </li>
     </ul>
   </div>
-
-  <br>
-  <br>
   <br>
   <br>
 
-  <div class="input-group mb-3" id="simularEmp">
+  <div class="input-group mb-2" id="nomeCl">
     <div class="input-group-prepend">
-      <span class="input-group-text">R$</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">NOME</span>
     </div>
-    <input type="text" class="form-control" aria-label="Quantia">
-    <div class="input-group-append">
-      <span class="input-group-text">.00</span>
-    </div>
+    <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" id="nomeCliente">
   </div>
-  <div class="input-group mb-3">
+  <div class="input-group mb-2" id="sobrenomeCl">
     <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">PRAZO:</label>
+      <span class="input-group-text" id="inputGroup-sizing-default">SOBRENOME</span>
     </div>
-    <select class="custom-select" id="inputGroupSelect01">
-      <option selected>Escolha:</option>
-      <option value="1">12 Meses</option>
-      <option value="2">24 Meses</option>
-      <option value="3">36 Meses</option>
-    </select>
+    <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" id="sobrenomeCliente">
   </div>
-  <div class="input-group mb-3">
+  <div class="input-group mb-2" id="idadeCl">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">ID CLIENTE</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">IDADE</span>
     </div>
-    <input type="text" class="form-control" aria-label="Exemplo do tamanho do input"
-      aria-describedby="inputGroup-sizing-default">
+    <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" id="idadeCliente">
+  </div>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-outline-success" id="botaoCadastrar">CADASTRAR</button>
+    </div>          
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-outline-success" id="gerarLista">EXIBIR LISTA</button>
+    </div>          
   </div>
 
-  <script type="text/javascript" src="./js.js"></script>
+  <br>
+
+  <div class="container">
+  <table class="table" id="myTable">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOME</th>
+        <th scope="col">SOBRENOME</th>
+        <th scope="col">IDADE</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+</div>
+
+  
+
+  <script type="text/javascript" src="../js.js"></script>
 
 </body>
 

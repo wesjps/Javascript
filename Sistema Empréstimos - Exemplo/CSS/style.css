@@ -12,6 +12,18 @@ img{
     text-align: center;
 }
 
+#carrosselInicio{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#divCarrossel{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 #prazo{
     margin-left: auto;
     margin-right: auto;
@@ -54,20 +66,25 @@ img{
     width: 40%;
 }
 
-table{  
+#myTable{  
     text-align: center;
-    background-color: #B5CF15;
-    width: 50%;
-    margin:auto;
-    
+    width: 60%;
+    margin: auto;
 }
+
+#simTable{  
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
 .btn-outline-success{
     width: 40%;
     margin: auto;
 }
 
 #gerarLista{
-width: 50%;
+width: 30%;
 margin:auto;
 }
 

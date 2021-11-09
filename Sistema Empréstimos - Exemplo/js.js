@@ -18,26 +18,26 @@ const idadeEditarCliente = document.querySelector("#sobrenomeEditarCliente");
 
 const tabelaClientes = document.querySelector("#tabelaClientes");
 
-if (botaoLista !== null){
+if (botaoLista !== null) {
     botaoLista.addEventListener('click', () => listarClientes());
 }
-if (botaoCadastrar !== null){
-botaoCadastrar.addEventListener('click',() => {
-    cadastrarCliente();
-    // adicionar função limpar campos
-    }); 
-}
-if (botaoSimular !== null){
-botaoSimular.addEventListener('click',() => {
-    simulacaoEmprestimo();
-    // adicionar função limpar campos
+if (botaoCadastrar !== null) {
+    botaoCadastrar.addEventListener('click', () => {
+        cadastrarCliente();
+        // adicionar função limpar campos
     });
 }
-if (botaoConfEdit !== null){
-botaoConfEdit.addEventListener('click',() =>{
-    editarCliente();
-    // adicionar função limpar campos
-    }); 
+if (botaoSimular !== null) {
+    botaoSimular.addEventListener('click', () => {
+        simulacaoEmprestimo();
+        // adicionar função limpar campos
+    });
+}
+if (botaoConfEdit !== null) {
+    botaoConfEdit.addEventListener('click', () => {
+        editarCliente();
+        // adicionar função limpar campos
+    });
 }
 
 
@@ -47,8 +47,6 @@ function cadastrarCliente(nomeCliente, sobrenomeCliente, idadeCliente) {
         nomeCliente: nomeDigitado.value,
         sobrenomeCliente: sobrenomeDigitado.value,
         idadeCliente: idadeDigitada.value,
-        taxaDeJuros: definirTaxa(idadeCliente),  
-        
     }
     listaClientes.push(cliente);
 }
@@ -62,20 +60,33 @@ function excluirCliente(indiceCliente) {
     }
 }
 
-function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, txJur) {
+function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, idadeCliente) {
     valorEmprestimoCliente = valorEmprestimo.value;
     numMesesCliente = prazoEmp.value;
-   // txJur = listaClientes[idCliente.value].taxaDeJuros;
-    
-    console.log(valorEmprestimoCliente,numMesesCliente);
+    idadeCliente = idadeDigitada.value;
+    txJur = definirTaxa(idadeCliente);
 
-    /*buscar taxa de juros no cadastro do cliente logado, e calcular o valor a ser pago*/
+    let prest = (valorEmprestimoCliente*((1+txJur) ** (numMesesCliente)))/numMesesCliente;
+
+    let tableRef = document.getElementById('simTable').getElementsByTagName('tbody')[0];    
+    let newRow = tableRef.insertRow();
+
+    let newCell = newRow.insertCell(0);    
+    let newText = document.createTextNode(`R$ ${valorEmprestimoCliente},00`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(1);
+    newText = document.createTextNode(`R$${prest.toFixed(2)}`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(2);
+    newText = document.createTextNode(`${(txJur * 100)}% /mês`);
+    newCell.appendChild(newText);
 
 }
 
 
 function definirTaxa(idadeCliente) {
-
     if (idadeCliente >= 18 && idadeCliente <= 25) {
         return 0.09;
     } else if (idadeCliente >= 26 && idadeCliente <= 35) {
@@ -100,9 +111,48 @@ function editarCliente(indiceCliente) {
 function listarClientes() {
 
     console.table(listaClientes);
-    let aux = "";
-    listaClientes.forEach((cliente) => { aux += `${cliente.nomeCliente} ${cliente.sobrenomeCliente}, ${cliente.idadeCliente} anos. Tx de Juros: ${cliente.taxaDeJuros}` });
-    return aux;
+
+    listaClientes.forEach((cliente) => {
+        let tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+        // Insere uma nova linha
+        let newRow = tableRef.insertRow();
+
+        // Insere a primeira célula
+        let newCell = newRow.insertCell(0);
+
+        // Insere o texto na célula em questão
+        let newText = document.createTextNode(`${listaClientes.indexOf(cliente)}`);
+        newCell.appendChild(newText);
+
+        newCell = newRow.insertCell(1);
+        newText = document.createTextNode(`${cliente.nomeCliente}`);
+        newCell.appendChild(newText);
+
+        newCell = newRow.insertCell(2);
+        newText = document.createTextNode(`${cliente.sobrenomeCliente}`);
+        newCell.appendChild(newText);
+
+        newCell = newRow.insertCell(3);
+        newText = document.createTextNode(`${cliente.idadeCliente}`);
+        newCell.appendChild(newText);
+
+        newCell = newRow.insertCell(4);
+        let link = document.createElement('a');
+        link.setAttribute('href','./editar.html');
+        let button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.appendChild(document.createTextNode('EDITAR'));
+        link.appendChild(button);
+        newCell.appendChild(link);
+        
+
+
+
+    });
+
+
+
 }
 
 
