@@ -19,11 +19,11 @@
 
 </head>
 
-<body style="background-color:#e8e5de">
+<body>
   <div>
     <div id="tarjaSuperior">
-      <div id="botaoHome">
-        <a href="../index.html"><button type="button" class="btn btn-outline-light">Home</button></a>
+      <div id="divBotaoHome">
+        <a href="../index.html"><button type="button" class="btn btn-outline-light" id="botaoHome">Home</button></a>
       </div>
       <div id="titulo">
         <br>
@@ -40,6 +40,8 @@
   <div id="blocoCen">
     <div id="blocoCentral">
       <div id="indiceLateral">
+        <br>
+        <br>
         <div class="d-grid gap-2">
           <button type="button" class="btn btn-secondary btn-sm" id="topic1">1 - Início</button>
         </div>
@@ -67,7 +69,8 @@
         <div class="d-grid gap-2">
           <button type="button" class="btn btn-secondary btn-sm" id="topic9">9 - Desça o carro</button>
         </div>
-
+        <br>
+        <br>
       </div>
       <div id="figCentral">
         <img src="../images/indMenu.gif" id="imgCentral">
@@ -75,77 +78,66 @@
       <div id="ppLateral">
 
         <h6 id="titLateral"></h6>
-
         <ul id="passos">
+          <br>
           <li id="li1">
           </li>
+          <br>
           <li id="li2">
           </li>
+          <br>
           <li id="li3">
           </li>
         </ul>
+        <br>
+        <div class="accordion accordion-flush" id="blackAccord" style="display: none;">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <b>DICA EXTRA 1</b>
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#blackAccord">
+              <div class="accordion-body">Tenha sempre em seu carro um <code>Triângulo de Sinalização</code> em boas condições de uso.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <b>DICA EXTRA 2</b>
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+              data-bs-parent="#blackAccord">
+              <div class="accordion-body">Tenha sempre uma boa <code>Lanterna</code> em seu carro, e certifique-se de que o funcionamento está
+                correto. Faça testes regularmente.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <b>DICA EXTRA 3</b>
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+              data-bs-parent="#blackAccord">
+              <div class="accordion-body">Verifique sempre se o local onde você vai parar é <code>realmente seguro</code>, tanto para o carro (nunca
+                pare em descidas) quanto para você.</div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>
   <br>
   <br>
-  <div id="ultDiv">
-    <div id="figAlerta">
-      <img src="../images/DicasExtras.gif">
-    </div>
-    <div id="blackAcord">
-      <div class="accordion accordion-flush">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="btnCol">
-              Dica 1
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            data-bs-parent="#blackAcord">
-            <div class="accordion-body">
-              Tenha sempre em seu carro um <code>Triângulo de Sinalização</code> em boas condições de uso.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id="btnCol">
-              Dica 2
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-            data-bs-parent="#blackAcord">
-            <div class="accordion-body">
-              Tenha sempre uma boa <code>Lanterna</code> em seu carro, e certifique-se de que o funcionamento está
-              correto. Faça testes regularmente.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
-              id="btnCol">
-              Dica 3
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-            data-bs-parent="#blackAcord">
-            <div class="accordion-body">
-              Verifique sempre se o local onde você vai parar é <code>realmente seguro</code>, tanto para o carro (nunca
-              pare em descidas) quanto para você.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <script type="text/javascript" src="../javascript.js"></script>
+  <script type="text/javascript" src="../script/javascript.js"></script>
   <footer>
     <p>@2021 by Wesley Silveira</p>
   </footer>
