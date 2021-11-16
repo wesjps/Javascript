@@ -6,6 +6,11 @@ img{
     width: 60%;
 }
 
+.container{
+    margin: auto;
+    text-align: center;
+}
+
 #logo{
     margin-left: auto;
     margin-right: auto;
@@ -31,11 +36,42 @@ img{
     width: 40%;
 }
 
-#idEditarCl{
+#botaoCadastrar{
+    width: 20%;
+    margin: auto;
+}
+
+#idEditarCliente{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     width: 10%;
+}
+
+#nomeEditarCliente{
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#sobrenomeEditarCliente{
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#idadeEditarCliente{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #idCl{
@@ -43,33 +79,53 @@ img{
     margin-right: auto;
     text-align: center;
     width: 40%;
+    font-style:italic;
 }
 
 #nomeCl{
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    width: 40%;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style:italic;
 }
 
 #sobrenomeCl{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 40%;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style:italic;
 }
 
 #idadeCl{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 40%;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style:italic;
 }
 
 #myTable{  
-    text-align: center;
+    text-align: left;
     width: 60%;
     margin: auto;
+    font-size: medium;
+}
+
+#myTable button{
+    background-color: #B5CF15;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: small;
 }
 
 #simTable{  
@@ -94,9 +150,25 @@ margin:auto;
 
 }
 
+#botaoConfEdit{
+    width: 20%;
+}
 
+#botaoSimular{
+    width: 20%;
+}
 
+#valorEmp{
+    width: 40%;
+    margin: auto;
+    font-style:italic;
+}
 
+#prazoEmp{
+    width: 40%;
+    margin: auto;
+    font-style:italic;
+}
 
 
 .nomeBanco{
@@ -130,99 +202,3 @@ top: 239px;
 }
 
 
-
-
-/*
-position: absolute;
-width: 78px;
-height: 29px;
-left: 368px;
-top: 695px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-*/
-
-
-/*
-
-position: absolute;
-width: 83px;
-height: 29px;
-left: 368px;
-top: 747px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-
-
-*/
-
-
-/*
-position: absolute;
-width: 86px;
-height: 29px;
-left: 368px;
-top: 799px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-
-*/
-
-
-/*
-
-position: absolute;
-width: 158px;
-height: 29px;
-left: 368px;
-top: 851px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-
-
-*/
-
-
-.cruzFundo{
-position: absolute;
-width: 1440px;
-height: 1024px;
-left: -1px;
-top: 0px;
-}

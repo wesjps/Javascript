@@ -4,17 +4,17 @@ const listaClientes = [];
 const botaoLista = document.querySelector("#gerarLista");
 let listaDeClientes = document.querySelector("#clienteListado");
 const botaoCadastrar = document.querySelector("#botaoCadastrar");
-let nomeDigitado = document.querySelector("#nomeCliente");
-let sobrenomeDigitado = document.querySelector("#sobrenomeCliente");
-let idadeDigitada = document.querySelector("#idadeCliente");
+let nomeDigitado = document.querySelector("#nomeCl");
+let sobrenomeDigitado = document.querySelector("#sobrenomeCl");
+let idadeDigitada = document.querySelector("#idadeCl");
 const valorEmprestimo = document.querySelector("#valorEmp");
 const prazoEmp = document.querySelector("#prazoEmp");
-const idCliente = document.querySelector("#idEditarCl");
+const idCliente = document.querySelector("#idEditarCliente");
 const botaoSimular = document.querySelector("#botaoSimular");
 const botaoConfEdit = document.querySelector("#botaoConfEdit");
 const nomeEditarCliente = document.querySelector("#nomeEditarCliente");
-const sobrenomeEditarCliente = document.querySelector("#nomeEditarCliente");
-const idadeEditarCliente = document.querySelector("#sobrenomeEditarCliente");
+const sobrenomeEditarCliente = document.querySelector("#sobrenomeEditarCliente");
+const idadeEditarCliente = document.querySelector("#idadeEditarCliente");
 
 const tabelaClientes = document.querySelector("#tabelaClientes");
 
@@ -23,14 +23,24 @@ if (botaoLista !== null) {
 }
 if (botaoCadastrar !== null) {
     botaoCadastrar.addEventListener('click', () => {
-        cadastrarCliente();
-        // adicionar função limpar campos
+
+        if (document.querySelector('#nomeCl').value !== "" && document.querySelector('#sobrenomeCl').value !== "" && document.querySelector('#idadeCl').value !== "") {
+            cadastrarCliente();
+            document.querySelector('#nomeCl').value = "";
+            document.querySelector('#sobrenomeCl').value = "";
+            document.querySelector('#idadeCl').value = "";
+        }
     });
 }
 if (botaoSimular !== null) {
     botaoSimular.addEventListener('click', () => {
-        simulacaoEmprestimo();
-        // adicionar função limpar campos
+
+        if (document.querySelector('#valorEmp').value !== "" && document.querySelector('#prazoEmp').value !== "" && document.querySelector('#idadeCl').value !== "") {
+            simulacaoEmprestimo();
+            document.querySelector('#valorEmp').value = "";
+            document.querySelector('#prazoEmp').value = "";
+            document.querySelector('#idadeCl').value = "";
+        }
     });
 }
 if (botaoConfEdit !== null) {
@@ -49,6 +59,7 @@ function cadastrarCliente(nomeCliente, sobrenomeCliente, idadeCliente) {
         idadeCliente: idadeDigitada.value,
     }
     listaClientes.push(cliente);
+    listarClientes();
 }
 
 function excluirCliente(indiceCliente) {
@@ -61,26 +72,26 @@ function excluirCliente(indiceCliente) {
 }
 
 function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, idadeCliente) {
-    valorEmprestimoCliente = valorEmprestimo.value;
+    valorEmprestimoCliente = parseInt(valorEmprestimo.value);
     numMesesCliente = prazoEmp.value;
     idadeCliente = idadeDigitada.value;
     txJur = definirTaxa(idadeCliente);
 
-    let prest = (valorEmprestimoCliente*((1+txJur) ** (numMesesCliente)))/numMesesCliente;
+    let prest = (valorEmprestimoCliente * (txJur / (1 - ((1 + txJur) ** (numMesesCliente * -1)))));
 
-    let tableRef = document.getElementById('simTable').getElementsByTagName('tbody')[0];    
+    let tableRef = document.getElementById('simTable').getElementsByTagName('tbody')[0];
     let newRow = tableRef.insertRow();
 
-    let newCell = newRow.insertCell(0);    
-    let newText = document.createTextNode(`R$ ${valorEmprestimoCliente},00`);
+    let newCell = newRow.insertCell(0);
+    let newText = document.createTextNode(`${(valorEmprestimoCliente).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`);
     newCell.appendChild(newText);
 
     newCell = newRow.insertCell(1);
-    newText = document.createTextNode(`R$${prest.toFixed(2)}`);
+    newText = document.createTextNode(`${(prest).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`);
     newCell.appendChild(newText);
 
     newCell = newRow.insertCell(2);
-    newText = document.createTextNode(`${(txJur * 100)}% /mês`);
+    newText = document.createTextNode(`${(txJur * 100).toFixed(1)}% ao mês`);
     newCell.appendChild(newText);
 
 }
@@ -88,13 +99,13 @@ function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, idadeClien
 
 function definirTaxa(idadeCliente) {
     if (idadeCliente >= 18 && idadeCliente <= 25) {
-        return 0.09;
+        return 0.009;
     } else if (idadeCliente >= 26 && idadeCliente <= 35) {
-        return 0.08;
+        return 0.008;
     } else if (idadeCliente >= 36 && idadeCliente <= 50) {
-        return 0.07;
+        return 0.007;
     } else {
-        return 0.06;
+        return 0.006;
     }
 }
 
@@ -112,44 +123,48 @@ function listarClientes() {
 
     console.table(listaClientes);
 
-    listaClientes.forEach((cliente) => {
-        let tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-
-        // Insere uma nova linha
-        let newRow = tableRef.insertRow();
-
-        // Insere a primeira célula
-        let newCell = newRow.insertCell(0);
-
-        // Insere o texto na célula em questão
-        let newText = document.createTextNode(`${listaClientes.indexOf(cliente)}`);
-        newCell.appendChild(newText);
-
-        newCell = newRow.insertCell(1);
-        newText = document.createTextNode(`${cliente.nomeCliente}`);
-        newCell.appendChild(newText);
-
-        newCell = newRow.insertCell(2);
-        newText = document.createTextNode(`${cliente.sobrenomeCliente}`);
-        newCell.appendChild(newText);
-
-        newCell = newRow.insertCell(3);
-        newText = document.createTextNode(`${cliente.idadeCliente}`);
-        newCell.appendChild(newText);
-
-        newCell = newRow.insertCell(4);
-        let link = document.createElement('a');
-        link.setAttribute('href','./editar.html');
-        let button = document.createElement('button');
-        button.setAttribute('type', 'button');
-        button.appendChild(document.createTextNode('EDITAR'));
-        link.appendChild(button);
-        newCell.appendChild(link);
-        
 
 
 
-    });
+
+    let tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+    // Insere uma nova linha
+    let newRow = tableRef.insertRow();
+
+    // Insere a primeira célula
+    let newCell = newRow.insertCell(0);
+
+    // Insere o texto na célula em questão
+    let newText = document.createTextNode(`${listaClientes.indexOf(cliente)}`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(1);
+    newText = document.createTextNode(`${cliente.nomeCliente}`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(2);
+    newText = document.createTextNode(`${cliente.sobrenomeCliente}`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(3);
+    newText = document.createTextNode(`${cliente.idadeCliente}`);
+    newCell.appendChild(newText);
+
+
+    newCell = newRow.insertCell(4);
+    let link = document.createElement('a');
+    link.setAttribute('href', './editar.html');
+    let button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.appendChild(document.createTextNode('EDITAR'));
+    link.appendChild(button);
+    newCell.appendChild(link);
+
+
+
+
+
 
 
 
