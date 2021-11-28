@@ -1,9 +1,42 @@
 
 
-img{
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+.navbar-brand img{
+    margin: auto;
+    width: 50%;
+}
+
+.navbar-brand{
+    margin: auto;
+    text-align: center;
+}
+
+.nav-item{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#nav-principal{
+    text-align: center;
+    margin: auto;
+}
+
+#linhaCab{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+body{
+    background-color: #dcdcdc;
+}
+
+#areaInputCadastro{
+    background-color: #ffc107;
+}
+
+#tarjaSuperior{
+    text-align: center;
+    margin: auto;
 }
 
 .container{
@@ -39,6 +72,8 @@ img{
 #botaoCadastrar{
     width: 20%;
     margin: auto;
+    box-shadow: 0 0 1em black;
+    background-color: #03bb85;
 }
 
 #idEditarCliente{
@@ -89,6 +124,8 @@ img{
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
+    border-color: #696969;
+    background-color: #ffffe0;
 }
 
 #sobrenomeCl{
@@ -100,6 +137,8 @@ img{
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
+    border-color: #696969;
+    background-color: #ffffe0;
 }
 
 #idadeCl{
@@ -111,6 +150,8 @@ img{
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
+    border-color: #696969;
+    background-color: #ffffe0;
 }
 
 #myTable{  
@@ -121,7 +162,7 @@ img{
 }
 
 #myTable button{
-    background-color: #B5CF15;
+    background-color: grey;
     color: white;
     border: none;
     border-radius: 10px;
