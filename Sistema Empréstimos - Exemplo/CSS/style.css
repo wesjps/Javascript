@@ -1,52 +1,69 @@
-
-
-.navbar-brand img{
-    margin: auto;
-    width: 50%;
+#home {
+	background: #ffc107;
+	color: white;
 }
 
-.navbar-brand{
-    margin: auto;
-    text-align: center;
-}
-
-.nav-item{
-    margin-left: 20px;
-    margin-right: 20px;
+#carouselExampleDark{
+	width: 50%;
+	margin: auto;
 }
 
 #nav-principal{
-    text-align: center;
-    margin: auto;
+	color: #451776;
 }
 
-#linhaCab{
-    padding: 0;
-    margin: 0;
-    color: white;
+#extra{
+	margin: auto;
+	padding: 10px;
+	width: 100%;
 }
 
-body{
-    background-color: #dcdcdc;
+#botaoSair{
+	width: 150%;
+    box-shadow: 0 0 5px white;
 }
 
-#areaInputCadastro{
-    background-color: #ffc107;
+#descompl{
+	color: #451776;
 }
 
-#tarjaSuperior{
-    text-align: center;
-    margin: auto;
+#frase{
+	color: #72418c;
+}
+
+#popover{
+	background-color: #d289d6;
+    color: #451776;
+    font-weight: bold;
+	border: none;
+	width: 50%;
+    box-shadow: 0 0 5px #451776;
+}
+
+#body{
+	background-color:lightgrey;
+}
+
+#logoEnd{
+	margin: auto;
+	
+	width: 30%;
+	
+}
+
+#divFim{
+	text-align: center;
+	margin: auto;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 .container{
     margin: auto;
-    text-align: center;
-}
-
-#logo{
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
 }
 
@@ -72,8 +89,13 @@ body{
 #botaoCadastrar{
     width: 20%;
     margin: auto;
-    box-shadow: 0 0 1em black;
-    background-color: #03bb85;
+    align-self: center;
+    justify-self: center;
+    color: #451776;
+    border: 1px solid #451776;
+    font-weight: bold;
+    background-color: #d289d6;
+    box-shadow: 0 0 1em #451776;
 }
 
 #idEditarCliente{
@@ -81,22 +103,32 @@ body{
     margin-right: auto;
     text-align: center;
     width: 10%;
+    font-style:italic;
+    background-color: lavender;
 }
 
 #nomeEditarCliente{
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     width: 30%;
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
+    font-style:italic;
+    background-color: lavender;
 }
 
 #sobrenomeEditarCliente{
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     width: 30%;
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
+    font-style:italic;
+    background-color: lavender;
 }
 
 #idadeEditarCliente{
@@ -107,6 +139,8 @@ body{
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
+    font-style:italic;
+    background-color: lavender;
 }
 
 #idCl{
@@ -118,14 +152,15 @@ body{
 }
 
 #nomeCl{
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     width: 30%;
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
-    border-color: #696969;
-    background-color: #ffffe0;
+    background-color: lavender;
 }
 
 #sobrenomeCl{
@@ -137,8 +172,7 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
-    border-color: #696969;
-    background-color: #ffffe0;
+    background-color: lavender;
 }
 
 #idadeCl{
@@ -150,8 +184,7 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     font-style:italic;
-    border-color: #696969;
-    background-color: #ffffe0;
+    background-color: lavender;
 }
 
 #myTable{  
@@ -159,20 +192,32 @@ body{
     width: 60%;
     margin: auto;
     font-size: medium;
+    background-color: lightgray;
+}
+
+#myTable th{
+    background-color: lightgray;
+    color: #451776;
 }
 
 #myTable button{
-    background-color: grey;
+    background-color: #451776;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: small;
+    width: 50%;
 }
 
 #simTable{  
     text-align: center;
     width: 60%;
     margin: auto;
+}
+
+#simTable th{
+    background-color: lightgray;
+    color: #451776;
 }
 
 .btn-outline-success{
@@ -193,21 +238,51 @@ margin:auto;
 
 #botaoConfEdit{
     width: 20%;
+    margin: auto;
+    align-self: center;
+    justify-self: center;
+    color: #451776;
+    border: 1px solid #451776;
+    font-weight: bold;
+    background-color: #d289d6;
+    box-shadow: 0 0 1em #451776;
 }
 
 #botaoSimular{
     width: 20%;
+    margin: auto;
+    align-self: center;
+    justify-self: center;
+    color: #451776;
+    border: 1px solid #451776;
+    font-weight: bold;
+    background-color: #d289d6;
+    box-shadow: 0 0 1em #451776;
 }
 
 #valorEmp{
-    width: 40%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style:italic;
+    background-color: lavender;
     font-style:italic;
 }
 
 #prazoEmp{
-    width: 40%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style:italic;
+    background-color: lavender;
     font-style:italic;
 }
 
