@@ -377,6 +377,10 @@ button.btn.btn-theme-color:hover{
     padding-top: 14px;
 }
 
+#teamPic{
+  width: 70%;
+  padding-bottom: 100px;
+}
 
 /*=====================================================
     Process
@@ -674,7 +678,7 @@ button.btn.btn-theme-color:hover{
 ======================================================*/
 
 .testimonial {
-    background: url('../img/testimonial.jpeg') no-repeat;
+    background: url('../img/testemunhos.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     padding-bottom: 100px;
