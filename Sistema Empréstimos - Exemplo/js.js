@@ -15,6 +15,7 @@ const botaoConfEdit = document.querySelector("#botaoConfEdit");
 const nomeEditarCliente = document.querySelector("#nomeEditarCliente");
 const sobrenomeEditarCliente = document.querySelector("#sobrenomeEditarCliente");
 const idadeEditarCliente = document.querySelector("#idadeEditarCliente");
+const botaoLog = document.querySelector("#botaoSair");
 
 const tabelaClientes = document.querySelector("#tabelaClientes");
 
@@ -25,10 +26,14 @@ if (botaoCadastrar !== null) {
     botaoCadastrar.addEventListener('click', () => {
 
         if (document.querySelector('#nomeCl').value !== "" && document.querySelector('#sobrenomeCl').value !== "" && document.querySelector('#idadeCl').value !== "") {
+
             cadastrarCliente();
             document.querySelector('#nomeCl').value = "";
             document.querySelector('#sobrenomeCl').value = "";
             document.querySelector('#idadeCl').value = "";
+
+
+
         }
     });
 }
@@ -62,15 +67,6 @@ function cadastrarCliente(nomeCliente, sobrenomeCliente, idadeCliente) {
     listarClientes();
 }
 
-function excluirCliente(indiceCliente) {
-    let aux = prompt("Deseja excluir algum cliente?");
-    if (aux === "sim") {
-        indiceCliente = parseInt(prompt("Digite o número do cliente a ser excluído: "));
-        listaClientes.splice(indiceCliente, 1);
-        console.log("Cliente excluido com sucesso");
-    }
-}
-
 function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, idadeCliente) {
     valorEmprestimoCliente = parseInt(valorEmprestimo.value);
     numMesesCliente = prazoEmp.value;
@@ -91,6 +87,10 @@ function simulacaoEmprestimo(valorEmprestimoCliente, numMesesCliente, idadeClien
     newCell.appendChild(newText);
 
     newCell = newRow.insertCell(2);
+    newText = document.createTextNode(`${(numMesesCliente)} meses`);
+    newCell.appendChild(newText);
+
+    newCell = newRow.insertCell(3);
     newText = document.createTextNode(`${(txJur * 100).toFixed(1)}% ao mês`);
     newCell.appendChild(newText);
 
@@ -110,66 +110,63 @@ function definirTaxa(idadeCliente) {
 }
 
 
-function editarCliente(indiceCliente) {
-    indiceCliente = idCliente.value;
-    listaClientes[indiceCliente].nomeCliente = nomeEditarCliente.value;
-    listaClientes[indiceCliente].sobrenomeCliente = sobrenomeEditarCliente.value;
-    listaClientes[indiceCliente].idadeCliente = idadeEditarCliente.value;
-}
-
-
 
 function listarClientes() {
 
     console.table(listaClientes);
 
-
-
-
-
     let tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
 
     // Insere uma nova linha
     let newRow = tableRef.insertRow();
+    newRow.setAttribute('id',listaClientes.indexOf(cliente))
 
     // Insere a primeira célula
     let newCell = newRow.insertCell(0);
 
-    // Insere o texto na célula em questão
+    // Insere o índice na célula em questão
     let newText = document.createTextNode(`${listaClientes.indexOf(cliente)}`);
     newCell.appendChild(newText);
 
+    // Insere o nome na célula
     newCell = newRow.insertCell(1);
     newText = document.createTextNode(`${cliente.nomeCliente}`);
     newCell.appendChild(newText);
 
+    // Insere o sobrenome na célula
     newCell = newRow.insertCell(2);
     newText = document.createTextNode(`${cliente.sobrenomeCliente}`);
     newCell.appendChild(newText);
 
+    // Insere a idade na célula
     newCell = newRow.insertCell(3);
     newText = document.createTextNode(`${cliente.idadeCliente}`);
     newCell.appendChild(newText);
 
-
+    // Crie e insere o botão EXCLUIR
     newCell = newRow.insertCell(4);
-    let link = document.createElement('a');
-    link.setAttribute('href', './editar.html');
-    let button = document.createElement('button');
-    button.setAttribute('type', 'button');
-    button.appendChild(document.createTextNode('EDITAR'));
-    link.appendChild(button);
-    newCell.appendChild(link);
-
-
-
-
-
-
-
+    let button2 = document.createElement('button');
+    button2.setAttribute('type', 'button');
+    button2.setAttribute('onclick', 'excluirCliente(this.parentNode.parentNode.id)')
+    button2.appendChild(document.createTextNode('EXCLUIR'));
+    newCell.appendChild(button2);
 
 }
 
 
 
+function excluirCliente(num) {
+    var a = document.getElementById(num)
+    a.remove();
 
+}
+
+
+function login() {
+    var content = botaoLog.innerHTML
+    if (content == "Sair"){
+        botaoLog.innerHTML = "Entrar";
+    }else{
+        botaoLog.innerHTML = "Sair";
+    }
+}

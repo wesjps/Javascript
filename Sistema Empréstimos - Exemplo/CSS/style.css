@@ -42,6 +42,7 @@
 
 #body{
 	background-color:lightgrey;
+    height: 100%;
 }
 
 #logoEnd{
@@ -318,3 +319,7 @@ top: 239px;
 }
 
 
+footer{
+    text-align: center;
+    width: 100%;
+}
