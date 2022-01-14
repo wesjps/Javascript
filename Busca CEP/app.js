@@ -14,7 +14,7 @@ btnBuscar.addEventListener('click', (e) => {
     try{
         validaCEP();
     }catch(erro){
-        //mensagemErro.innerHTML = erro.message;
+        mensagemErro.innerHTML = erro.message;
     }
 })
 
@@ -27,12 +27,20 @@ btnSalvar.addEventListener('click', () => {
     limparCampos();
 })
 
+function preencheCampos(endereco){
+    for(const campo in endereco){
+        if(document.querySelector("#" + campo)){
+            document.querySelector("#" + campo).value = endereco[campo];
+        }
+    }
+}
+
 function buscaEndereco(){
     fetch(`http://viacep.com.br/ws/${cepbusca.value}/json`)
     .then((resposta) => {
         return resposta.json();
     }).then((endereco) => {
-        console.log(endereco);
+        preencheCampos(endereco);
     }).catch((erro) => {
         console.error(erro);
     })
